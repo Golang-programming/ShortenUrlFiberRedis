@@ -1,9 +1,9 @@
 package routes
 
 import (
+	"github.com/Golang-programming/ShortenUrlFiberRedis/database"
 	"github.com/go-redis/redis/v8"
 	"github.com/gofiber/fiber/v2"
-	"github.com/zeshantech/shorten-url-fiber-redis/database"
 )
 
 func ResolveURL(ctx *fiber.Ctx) error {

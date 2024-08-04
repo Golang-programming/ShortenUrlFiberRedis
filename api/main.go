@@ -4,9 +4,9 @@ import (
 	"log"
 	"os"
 
+	"github.com/Golang-programming/ShortenUrlFiberRedis/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/joho/godotenv"
-	"github.com/zeshantech/shorten-url-fiber-redis/routes"
 )
 
 func setupRoutes(app *fiber.App) {

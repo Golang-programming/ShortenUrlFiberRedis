@@ -5,12 +5,12 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/Golang-programming/ShortenUrlFiberRedis/database"
+	"github.com/Golang-programming/ShortenUrlFiberRedis/helpers"
 	"github.com/asaskevich/govalidator"
 	"github.com/go-redis/redis/v8"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
-	"github.com/zeshantech/shorten-url-fiber-redis/database"
-	"github.com/zeshantech/shorten-url-fiber-redis/helpers"
 )
 
 type request struct {

@@ -1,4 +1,4 @@
-module github.com/zeshantech/shorten-url-fiber-redis
+module github.com/Golang-programming/ShortenUrlFiberRedis
 
 go 1.22.5
 

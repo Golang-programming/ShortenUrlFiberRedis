@@ -1,13 +1,16 @@
-FROM golang:alpins AS builder
+# multistage docker build. This redices the size of the final docker image.
+# stage 1 to build the app
+FROM golang:alpine AS builder
 
-RUN mkdir /builder
+RUN mkdir /build 
 
-WORKDIR /build
+ADD . /build/
 
-RUN go build -o main.
+WORKDIR /build 
 
-# Stage 2
+RUN go build -o main .
 
+# stage 2 deploys the app built in stage 1
 FROM alpine:latest
 
 RUN adduser -S -D -H -h /app appuser
@@ -20,6 +23,6 @@ COPY --from=builder /build/main /app/
 
 WORKDIR /app
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["./main"]
